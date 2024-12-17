@@ -1,0 +1,292 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Hi
+      - Hello
+      - Hey
+      - Hi there
+      - Hello there
+      - Hey there
+      - Greetings
+      - Good morning
+      - Good afternoon
+      - Good evening
+      - What's up?
+      - Howdy
+      - What's going on?
+
+  - intent: select_language
+    examples: |
+      - I want to select a language
+      - Please choose a language
+      - What languages can I choose from?
+      - I'd like to choose a language
+      - Can I switch to a different language?
+      - How do I select my language?
+      - Change my language
+      - Language options, please
+
+  - intent: english
+    examples: |
+      - English
+      - I want to speak in English
+      - Let's use English
+      - English please
+      - Change to English
+      - Switch to English
+      - Can we use English?
+      - I prefer English
+
+  - intent: japanese
+    examples: |
+      - Japanese
+      - I want to speak in Japanese
+      - Switch to Japanese
+      - Let's use Japanese
+      - 日本語でお願いします
+      - Can we use Japanese?
+      - I prefer Japanese
+      - Change to Japanese
+
+  - intent: chinese
+    examples: |
+      - Chinese
+      - I want to speak in Chinese
+      - Switch to Chinese
+      - Let's use Chinese
+      - 中文
+      - Can we use Chinese?
+      - I prefer Chinese
+      - Change to Chinese
+
+  - intent: book_movie
+    examples: |
+      - Book or movie
+      - movie
+      - film
+      - ticket
+      - M
+      - movie ticket
+      - book ticket
+      - T
+      - I want to book a movie
+      - Book a movie
+      - I want to reserve a movie
+      - Reserve a movie
+      - I want to buy a movie ticket
+      - Buy a movie ticket
+      - Let's choose a movie first
+      - Help me book a movie
+      - Find me a movie to watch
+      - How can I book a movie?
+      - I'm going to have a film with my girlfriend today around [Paragon Shopping Centre](location), any suggestion movie today?
+      - Any good movies near [Paragon Shopping Centre](location)?
+      - I'd like to watch something at [Paragon Shopping Centre](location).
+      - Suggest a movie and help me book tickets.
+      - Hi, I want to book a film.
+      - I want to book a movie for me and my girlfriend today.
+      - Can you find a movie for us to watch today?
+      - I want to book a movie for me and my girlfriend today.
+      - Show me movies
+      - Show me movies near [Paragon Shopping Centre](location)
+      - I want to watch a movie
+
+  - intent: fetch_showtimes
+    examples: |
+      - What are the showtimes for the movie?
+      - Show me the showtimes.
+      - I want to see the showtimes.
+      - What time is the movie showing?
+      - Give me the schedule for the movie.
+      - When is [Zodiac](movie) playing?
+      - Can you tell me the showtimes for [Constantine](movie)?
+      - What time is [The Matrix](movie) showing?
+      - When is [The Dark Knight](movie) playing?
+      - I would like to know the showtimes for [Interstellar](movie).
+      - I would like to inquire the showtimes for [Avatar](movie).
+
+  - intent: set_showtime
+    examples: |
+      - I choose 1
+      - Option 2
+      - Showtime 3
+      - I'll go with 4
+      - Number 2, please
+      - I want the first showtime
+      - The second option works for me
+      - I'll take showtime 3
+      - Let's go with 2
+      - Select 4
+      - I would lik to book a ticket for the 5:00 PM show
+      - I want to watch the 7:00 PM show
+      - I'll take the 9:00 PM show
+      - I choose the 11:00 PM show
+      - I want to watch the 1:00 AM show
+      - I want to watch the 3:00 AM show
+
+  - intent: select_location_query
+    examples: |
+      - I want to select a location
+      - Please choose a location
+      - What locations can I choose from?
+      - I'd like to choose a location
+      - I want to change my location
+      - Where can I watch a movie?
+      - Select a cinema near me
+      - Help me find a cinema
+      - What are my location options?
+      - Let me pick a location
+      - cinemas
+      - locations
+      - cinema
+      - place
+
+  - intent: select_location
+    examples: |
+      - I want to find cinemas in [Hong Kong](location)
+      - Set my location to [Singapore](location)
+      - Change my location to [Malaysia](location)
+      - Find cinemas in [Malaysia](location)
+      - Show me cinemas in [Singapore](location)
+      - [Malaysia](location)
+      - [Hong Kong](location)
+      - [Singapore](location)
+      - What cinemas are in [Hong Kong](location)?
+      - Are there cinemas in [Singapore](location)?
+
+  - intent: select_cinema
+    examples: |
+      - I choose cinema 1
+      - Select cinema 1
+      - Cinema 1 please
+      - I'll take cinema 1
+      - I choose cinema 2
+      - I'll watch at cinema 2
+      - Select cinema 2
+      - Cinema 2, please
+      - Cinema 1
+      - Cinema 2
+      - [GSC Mid Valley](cinema)
+      - [TGV Sunway Pyramid](cinema)
+      - [MBO Puchong](cinema)
+
+  - intent: select_movie
+    examples: |
+      - I want to watch [Avengers: Endgame](movie)
+      - Book a ticket for [The Lion King](movie)
+      - I want to reserve a seat for [Spider-Man](movie)
+      - [Toy Story](movie) is my favorite movie
+      - I want to watch [Aladdin](movie)
+      - Can I book [The Dark Knight](movie)?
+      - What about [Interstellar](movie)?
+      - Show me movies like [Avatar](movie)
+
+  - intent: set_movie
+    examples: |
+      - I choose movie [1](movie)
+      - I want to watch movie 1
+      - Select movie 1
+      - Movie 1 please
+      - I'll take movie 1
+      - I choose movie 2
+      - I'll watch movie 2
+      - Select movie 2
+      - Movie 2, please
+      - 1
+      - 2
+      - I select 2
+      - Movie 1
+      - Movie 2
+      - I want to watch [Avengers: Endgame](movie)
+      - Book a ticket for [The Lion King](movie)
+      - I want to reserve a seat for [Spider-Man](movie)
+      - [Toy Story](movie) is my favorite movie
+      - I want to watch [Aladdin](movie)
+      - Can I book [The Dark Knight](movie)?
+      - What about [Interstellar](movie)?
+      - Show me movies like [Avatar](movie)
+      - [Zodiac](movie)
+      - [Constantine](movie)
+
+
+  - intent: select_seat_query
+    examples: |
+      - I want to select a seat
+      - Reserve a seat
+      - I want to choose a seat
+      - Select a seat
+      - I want to book a seat
+      - Help me find a seat
+      - Which seats are available?
+      - Show me the seat options
+
+  - intent: select_seat
+    examples: |
+      - I want [VIP](seat_type) seats
+      - Reserve [Standard](seat_type) seats
+      - I want to choose [Couple](seat_type) seats
+      - Select [VIP](seat_type) seats
+      - I want to book [Standard](seat_type) seats
+      - Can I book [Couple](seat_type) seats?
+      - [VIP](seat_type) seats
+      - [Standard](seat_type)
+
+  - intent: select_seat_number
+    examples: |
+      - I want to reserve seat number [1](seat_number)
+      - Reserve seat number [2](seat_number)
+      - I want to choose seat number [3](seat_number)
+      - Select seat number [4](seat_number)
+      - Book seat number [5](seat_number)
+      - Can I book seat number [6](seat_number)?
+      - I need seat number [7](seat_number)
+      - Seat number [8](seat_number)
+      - I want seat number [9](seat_number)
+      - Seat number [10](seat_number) please
+      - [11](seat_number)
+
+  - intent: confirm_booking
+    examples: |
+      - [confirm](decide) booking
+      - I want to [confirm](decide) my booking
+      - [confirm](decide) my reservation
+      - [confirm](decide) my ticket
+      - [confirm](decide) my seat
+      - Yes, [confirm](decide) it
+      - Let's [confirm](decide) with the booking
+      - [confirm](decide) my choice
+      - [confirm](decide)
+
+  - intent: select_payment_option
+    examples: |
+      - I want to pay by [Visa](payment_option)
+      - Pay by [Mastercard](payment_option)
+      - I want to pay using [Paypal](payment_option)
+      - Use [Mastercard](payment_option) to pay
+      - Pay with [Visa](payment_option)
+      - Can I pay via [Paypal](payment_option)?
+      - What are my payment options?
+      - [Mastercard](payment_option)
+
+  - intent: cancel_booking
+    examples: |
+      - [Cancel](decide) my ticket
+      - [Cancel](decide) my seat
+      - No, [cancel](decide) it
+      - Let's [cancel](decide) the booking
+      - [Cancel](decide) my choice
+      - I want to cancel my reservation
+      - Cancel my booking
+      - I want to cancel my ticket
+      - [Cancel](decide)
+
+regex:
+- payment_option: ^[A-Za-z]+$
+- decide: ^[A-Za-z]+$
+- location: ^[A-Za-z\s]+$
+- seat_number: ^[0-9]+$
+- seat_type: ^[A-Za-z\s]+$
+- cinema: ^[A-Za-z0-9\s:]+$
+- movie: ^[A-Za-z0-9\s:]+$

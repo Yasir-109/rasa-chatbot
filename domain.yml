@@ -1,0 +1,188 @@
+version: "3.1"
+intents:
+  - greet
+  - select_language
+  - english
+  - japanese
+  - chinese
+  - book_movie
+  - fetch_showtimes
+  - set_showtime
+  - select_location_query
+  - select_location
+  - select_cinema
+  - select_movie
+  - select_seat_query
+  - select_seat
+  - select_seat_number
+  - select_payment_option
+  - set_movie
+  - confirm_booking
+  - cancel_booking
+
+
+entities:
+  - location
+  - movie
+  - showtime
+  - cinema
+  - seat_type
+  - seat_number
+  - decide
+  - payment_option
+
+slots:
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+  movie:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: movie
+  showtime:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: showtime
+  cinema:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: cinema
+  seat_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: seat_type
+  seat_number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: seat_number
+  payment_option:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: payment_option
+  decide:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: decide
+  valid_movies:
+    type: list
+    influence_conversation: false  # No mappings here, as it's populated dynamically in actions
+    mappings:
+      - type: from_entity
+        entity: movie
+
+
+responses:
+  utter_ask_language:
+    - text: "What language would you like to use?"
+    - text: "You can choose from English, Japanese, or Chinese."
+    - text: "Please type your preferred language."
+
+  utter_welcome:
+    - text: "Welcome to the cinema ticket booking system!"
+    - text: "How may I assist you today?"
+
+  utter_english_selected:
+    - text: "You selected English."
+    - text: "Let's continue."
+
+  utter_japanese_selected:
+    - text: "You selected Japanese."
+    - text: "では、続けましょう。"
+
+  utter_chinese_selected:
+    - text: "您选择了中文。"
+    - text: "我们继续吧。"
+
+  utter_language_issue:
+    - text: "The selected language is currently not supported.\nSwitching over to English."
+
+  utter_movie_selection:
+    - text: "Here are two popular movies you can choose from."  
+
+  utter_ask_showtimes:
+    - text: "Please select a showtime for the movie you want to watch."
+
+  utter_ask_location:
+    - text: "We have cinemas in Hong Kong, Singapore, and Malaysia."
+
+  utter_hong_kong_cinemas:
+    - text: "In Hong Kong, you can choose from these cinemas:"
+    - text: "1. Grand Ocean (Ocean Centre)"
+    - text: "2. The Sky (Olympian City)"
+    - text: "3. StagE (Tuen Mun Town Plaza Phase 1)"
+
+  utter_singapore_cinemas:
+    - text: "In Singapore, you can choose from these cinemas:"
+    - text: "1. Golden Mile Tower"
+    - text: "2. Cathay Cineleisure Orchard"
+
+  utter_malaysia_cinemas:
+    - text: "In Malaysia, you can choose from these cinemas:"
+    - text: "1. GSC Mid Valley Megamall (Kuala Lumpur)"
+    - text: "2. GSC Pavilion KL (Kuala Lumpur)"
+    - text: "3. GSC Paradigm Mall (Petaling Jaya)"
+
+  utter_ask_seats:
+    - text: "Which seat would you like to reserve?"
+    - text: "We have 3 types of seats: Standard, VIP, and Couple."
+
+  utter_ask_seat_number:
+    - text: "Which seat number would you like to reserve?"
+    - text: "Please enter the seat number."
+
+  utter_seat_selection:
+    - text: "You have selected {seat_type}."
+    - text: "Your seat number is {seat_number}."
+    - text: "Your seat has been reserved."
+
+  utter_payment_options:
+    - text: "Now that you have confirmed your ticket."
+    - text: "Let us get started on the payment process."
+    - text: "Please decide between the different options of payment."
+    - text: "The payment options we provide are:"
+    - text: "Master, Visa & Paypal"
+
+  utter_payment_link:
+    - text: "Please click on the link below to proceed with payment.\nhttps://www.dummylink.com/payment"
+
+  utter_booking_confirmed:
+    - text: "Congratulations your booking has been confirmed."
+    - text: "Please reach the cinema at the decided time."
+    - text: "Enjoy your movie!"
+
+  utter_booking_cancelled:
+    - text: "Your booking has been cancelled. Let me know if there's anything else I can help with!"
+
+actions:
+  - action_ask_language
+  - action_welcome
+  - action_set_language
+  - action_detect_booking_keywords
+  - action_choose_option
+  - action_fetch_movies
+  - action_send_movie_template
+  - action_set_movie
+  - action_fetch_showtimes
+  - action_set_showtime
+  - action_set_location
+  - action_fetch_cinemas
+  - action_set_cinema
+  - action_ask_seats_type
+  - action_set_seats_type
+  - action_ask_seat_number
+  - action_set_seats_number
+  - action_ask_confirmation
+  - action_set_confirmation
+  - action_confirm_booking
+  - action_ask_payment_option
+  - action_set_payment_option
+  - action_booking_confirmed
